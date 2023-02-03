@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广东省悦买房数据分析及可视化数据接口说明</title>
+    <script src="../static/js/jquery-1.11.3.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+        }
+        .url_c {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">广东省悦买房数据分析及可视化数据接口说明</h1>
+<table border="1">
+    <tr>
+        <th class="url_c">任务数据接口调用URL</th>
+        <th class="data_c">任务数据参考内容</th>
+    </tr>
+    <tr>
+
+        <td class="url_c"><a href="/task1">/task1</a></td>
+        <td class="data_c"><span id="task1"></span></td>
+    </tr>
+    <tr>
+        <td class="url_c"><a href="/task2">/task2</a></td>
+        <td class="data_c"><span id="task2"></span></td>
+    </tr>
+    <tr>
+        <td class="url_c"><a href="/task3">/task3</a></td>
+        <td class="data_c"><span id="task3"></span></td>
+    </tr>
+    <tr>
+        <td class="url_c"><a href="/task4">/task4</a></td>
+        <td class="data_c"><span id="task4"></span></td>
+    </tr>
+     <tr>
+        <td class="url_c"><a href="/task5">/task5</a></td>
+        <td class="data_c"><span id="task5"></span></td>
+    </tr>
+     <tr>
+        <td class="url_c"><a href="/task6">/task6</a></td>
+        <td class="data_c"><span id="task6"></span></td>
+    </tr>
+</table>
+    <script type="text/javascript">
+    //左上 柱状图
+    $.ajax({
+        type: 'get',
+        url: "/task1",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                document.getElementById('task1').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //左中 条形图
+    $.ajax({
+        type: 'get',
+        url: "/task2",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+
+                document.getElementById('task2').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //左下 瀑布图
+    $.ajax({
+        type: 'get',
+        url: "/task3",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(key) + "数据";
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                document.getElementById('task3').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //中上 折线图
+    $.ajax({
+        type: 'get',
+        url: "/task4",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                document.getElementById('task4').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //中中 雷达图
+    $.ajax({
+        type: 'get',
+        url: "/task5",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(key) + "数据" + "\n";
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                str_pretty1 = str_pretty1 + "\n";
+                document.getElementById('task5').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //中下 玫瑰图
+    $.ajax({
+        type: 'get',
+        url: "/task6",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(key) + "数据" + "\n";
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                str_pretty1 = str_pretty1 + "\n";
+                document.getElementById('task6').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //右上 圆环图
+    $.ajax({
+        type: 'get',
+        url: "/task7",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(key) + "数据" + "\n";
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                str_pretty1 = str_pretty1 + "\n";
+                document.getElementById('task7').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //右中 旭日图
+    $.ajax({
+        type: 'get',
+        url: "/task8",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(key) + "数据" + "\n";
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                str_pretty1 = str_pretty1 + "\n";
+                for(i= 0; i< 2; i++){
+                    for(var key2 in datas[key][i]){
+                        str_pretty1 = str_pretty1 + JSON.stringify(key2) + "子数据" + "\n";
+                        str_pretty1 = str_pretty1 + JSON.stringify(datas[key][i][key2].slice(0, 10), 2);
+                        str_pretty1 = str_pretty1 + "\n";
+                    }
+                }
+                document.getElementById('task8').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+    //右下 树图
+    $.ajax({
+        type: 'get',
+        url: "/task9",
+        dataType: "json",
+        success: function(datas){
+            console.log(datas);
+            str_pretty1 = "";
+            for (var key in datas){
+                str_pretty1 = str_pretty1 + JSON.stringify(key) + "数据" + "\n";
+                str_pretty1 = str_pretty1 + JSON.stringify(datas[key], 2);
+                str_pretty1 = str_pretty1 + "\n";
+                for(var key2 in datas[key][0]){
+                    str_pretty1 = str_pretty1 + JSON.stringify(key2) + "子数据" + "\n";
+                    str_pretty1 = str_pretty1 + JSON.stringify(datas[key][0][key2], 2);
+                    str_pretty1 = str_pretty1 + "\n";
+                }
+                for(i= 0; i< 2; i++){
+                    for(var key3 in datas[key][0]['children'][i]){
+                        str_pretty1 = str_pretty1 + JSON.stringify(key3) + "子数据" + "\n";
+                        str_pretty1 = str_pretty1 + JSON.stringify(datas[key][0]['children'][i][key3], 2);
+                        str_pretty1 = str_pretty1 + "\n";
+                    }
+                }
+                document.getElementById('task9').innerText = str_pretty1;
+            }
+        },
+        error:function(err){
+            console.log(err)
+            return err;
+        }
+    })
+
+
+    </script>
+</body>
+</html>
